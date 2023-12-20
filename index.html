@@ -4,45 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Grid Layout</title>
-    <style>
-        body{
-            display: flex;
-            justify-content: center;
-        }
-        .container {
-            width: 400px; 
-            height: 400px; 
-        }
-        .row {
-            display: flex;
-        }
-        .cell {
-            flex: 1;
-            border: 1px solid black; 
-            box-sizing: border-box; 
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <div class="container"></div>
+<body class="container">
+    <div class="content">
+        <div class="name">
+            Etch-a-Sketch
+        </div>
+        <div class="button-container">
+            <div id="colorButton">
+                <button>Color</button>
+            </div>
+            <div id="blackButton">
+                <button>Black</button>
+            </div>
+            <div id="whiteButton">
+                <button>White</button>
+            </div>
+            <div id="classicButton">
+                <button>Classic</button>
+            </div>
+            <div id="clearButton">
+                <button>Clear</button>
+            </div>
+            <div class="slider">
+                <input type="range" class="mySlider" min="1" max="100" value="50" 
+                oninput="rangeValue.innerText = this.value">
+                <p id="rangeValue">50</p>
+            </div> 
 
-    <script>
-        const container = document.querySelector('.container');
-        let dimension = 16; 
-        let cellHeight = container.clientHeight / dimension;
+        </div>
+        <div class="grid-container"></div>
+    </div>
 
-        for (let row = 0; row < dimension; row++) {
-            let rowDiv = document.createElement('div');
-            rowDiv.classList.add('row');
-
-            for (let col = 0; col < dimension; col++) {
-                let cellDiv = document.createElement('div');
-                cellDiv.classList.add('cell');
-                cellDiv.style.height = `${cellHeight}px`; 
-                rowDiv.appendChild(cellDiv);
-            }
-            container.appendChild(rowDiv);
-        }
-    </script>
+    <div class="footer"></div>
+    <script src="script.js"></script>
 </body>
 </html>
