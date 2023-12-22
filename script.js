@@ -4,9 +4,8 @@ function makeGrid(gridContainer){
         gridContainer.removeChild(gridContainer.firstChild);
     }
 
-    const textElement = document.querySelector('#rangeValue');
-    const textValue = textElement.innerText;
-    const dimension = textValue; 
+
+    const dimension = 50; 
     let cellHeight = gridContainer.clientHeight / dimension;
     for (let i = 0 ; i < dimension * dimension; i ++){
         let grid = document.createElement('div');
